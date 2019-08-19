@@ -15,13 +15,15 @@ RETURN m, (m)--(:Team), (m)--(:Caster)
 
 ![Diagem](/img/database-model.png)
 
-## Setup
+## Import the data
 
-Copy the following files into the `import` folder of your Neo4j installation, then run the following queries.
+Copy the following files into the `import` folder of your Neo4j installation.
 
 - teams.csv
 - matches.csv
 - casters.csv
+
+Then run the following queries to import the data.
 
 ```
 LOAD CSV WITH HEADERS FROM "file:///teams.csv" AS row
