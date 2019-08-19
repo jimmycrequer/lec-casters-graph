@@ -80,8 +80,10 @@ WITH m,
      COLLECT(DISTINCT t.nameFull) AS matchup, 
      COLLECT(DISTINCT c.name) AS cast
 WHERE size(cast) = 3
-RETURN matchup[0] + " VS " + matchup[1] AS Match,
+RETURN m.date AS date, 
+       matchup[0] + " VS " + matchup[1] AS Match,
        cast AS Cast
+ORDER by date ASC
 ```
 
 ### Casters who never casted together
