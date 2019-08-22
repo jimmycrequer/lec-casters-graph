@@ -92,7 +92,7 @@ ORDER by date ASC
 MATCH (c1:Caster),
       (c2:Caster)
 WHERE id(c1) < id(c2) 
-  AND size( (c1)-[:CASTED]->(:Match)<-[:CASTED]-(c2) ) = 0
+  AND NOT( (c1)-[:CASTED]->(:Match)<-[:CASTED]-(c2) )
 RETURN c1.name,
        c2.name
 ```
